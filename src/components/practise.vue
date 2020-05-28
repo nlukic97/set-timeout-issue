@@ -3,7 +3,9 @@
     <h1>Hii</h1>
     <input type="text" v-bind:placeholder="placeholder_value" v-model="input_info">
     <h1>{{message}}</h1>
-    <button v-on:click="newText">Change me</button>
+    <p v-bind:placeholder="message"></p>
+    <button v-on:click="newText">Change text</button>
+    <button id="secondBtn" v-on:click="clearAll">Clear all text</button>
   </div>
 </template>
 
@@ -35,6 +37,10 @@ export default {
     // 3 - basic print
       this.message += this.input_info;
       }
+    },
+    clearAll: function(){
+      this.input_info = '';
+      this.message = ''
     }
   } 
 }
@@ -42,6 +48,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
-
+  .hello {
+    button {
+      display:block;
+      margin:5px auto
+    }
+  }
 </style>
 
